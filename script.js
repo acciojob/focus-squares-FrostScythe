@@ -8,15 +8,17 @@ const coffee = "#6F4E37";
 
 // Add event listeners
 squares.forEach((sq, idx) => {
-  sq.addEventListener("mouseenter", () => {
+  sq.addEventListener("mouseover", () => {
     squares.forEach((other, i) => {
       if (i !== idx) {
         other.style.backgroundColor = coffee;
+      } else {
+        other.style.backgroundColor = lavender; // keep hovered square lavender
       }
     });
   });
 
-  sq.addEventListener("mouseleave", () => {
+  sq.addEventListener("mouseout", () => {
     squares.forEach(other => {
       other.style.backgroundColor = lavender;
     });
